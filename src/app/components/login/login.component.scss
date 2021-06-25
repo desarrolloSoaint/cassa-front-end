@@ -1,0 +1,32 @@
+
+@import "../../../assets/styles/size.scss";
+@import "../../../assets/styles/colors.scss";
+
+button{
+    background-color: $tertiary-blue;
+}
+a{
+    color: $fourth-blue;
+}
+.mt {
+    margin-top: $mt-2;
+} 
+.mb {
+    margin-bottom: $mt-2;
+} 
+.fb{
+    color:$fourth-blue ;
+}
+.font{
+    color:$white;
+    font-weight: 550;
+}
+.img{
+    width: 50%;
+    margin-left: 25%;
+}
+
+
+
+
+

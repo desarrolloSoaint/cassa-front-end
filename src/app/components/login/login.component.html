@@ -1,0 +1,35 @@
+<body id="login-display">
+    <mat-card id="login-background">
+        <mat-card-content>
+            <form class="example-form" [formGroup]="loginForm">
+                <img mat-card-image src="../../../assets/Img/Logo cassa.png" class="img mb">
+                <div class="row">
+                    <mat-form-field appearance="outline" id="login-display">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email" name="email" placeholder="Ingrese Email"
+                            autofocus>
+                        <mat-error ngxErrors="loginForm.email">
+                            <p ngxError="email"> {{title.email}}</p>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline" id="login-display">
+                        <mat-label>Password</mat-label>
+                        <input type="Password" matInput formControlName="password" name="password"
+                            placeholder="Ingrese Contraseña">
+                        <mat-error ngxErrors="loginForm.password">
+                            <p ngxError="minLength"> {{title.password}}</p>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div id="login-display" class="row mt">
+                    <button mat-raised-button class="font" (click)="login()">{{title.sesion}}</button>
+                </div>
+                <div id="login-display" class="row mt">
+                    <a mat-button href="https://www.google.com/" target="_blank">{{title.forget}}</a>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</body>
