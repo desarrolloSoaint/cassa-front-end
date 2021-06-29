@@ -12,7 +12,19 @@ import { HomeComponent } from './components/home/home.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { TableComponent } from './components/table/table.component';
 
+
+
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatDividerModule} from '@angular/material/divider';
+
+
 @NgModule({
+
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -26,7 +38,13 @@ import { TableComponent } from './components/table/table.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatTabsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
