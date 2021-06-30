@@ -20,6 +20,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +51,12 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonToggleModule,
+    MatTabsModule,
+    MatDividerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
