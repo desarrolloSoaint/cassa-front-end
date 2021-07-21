@@ -1,0 +1,33 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/size.scss";
+
+  mat-card {
+    background: $primary-pink;
+    width: 80%;
+  }
+
+  h1{
+    text-align: center;
+    
+  }
+body{
+  
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+span {
+  flex: 0.5 0 0;
+}
+table{
+  width: 100%;
+  margin-top: $mt-2;
+}
+
+mat-toolbar{
+  background: transparent;
+
+}
