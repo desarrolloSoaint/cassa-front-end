@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
-import { Login } from 'src/app/components/login/login';
+import { Login } from 'src/app/core/interfaces/login';
 import { baseUrl } from 'src/app/models/config';
 
 @Injectable({
@@ -15,4 +14,7 @@ export class LoginService {
   login(data: Login):Observable<Login>{
     return this.httpClient.post<Login>(`${baseUrl}/login`,data);
   }
+
+  
+ 
 }

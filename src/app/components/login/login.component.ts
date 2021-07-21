@@ -1,9 +1,9 @@
-import { CompileShallowModuleMetadata } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, Routes } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 import Swal from 'sweetalert2';
+
 
 export interface User {
   name: string;
@@ -25,18 +25,26 @@ export class LoginComponent implements OnInit {
     email: "Ingrese un email válido",
     password: "Ingrese una contaseña válida"
   }
+  
   constructor(private router: Router, public loginServices: LoginService) { }
-  ngOnInit(): void {}
-  loginForm = new FormGroup({
+  
+  ngOnInit(): void {
+  
+  }
+
+    loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   })
+
   login() {
     if (this.loginForm.valid) {
+      
       this.loginServices.login(this.loginForm.value).subscribe(result=>{
         console.log(result);
         this.router.navigate(['home']);
         this.alertSuccess();
+        // this.token();
       }, (error)=>{
         this.alertError();
         this.loginForm.reset()

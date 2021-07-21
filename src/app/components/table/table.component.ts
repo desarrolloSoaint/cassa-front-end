@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, _MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { EditComponent } from '../edit/edit.component';
 import { ViewComponent } from '../view/view.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { FacturaService } from '../../services/factura/factura.service';
+import { Factura } from 'src/app/core/interfaces/factura';
 
 @Component({
   selector: 'app-table',
@@ -11,13 +15,31 @@ import { ViewComponent } from '../view/view.component';
 })
 export class TableComponent implements OnInit {
   
-  displayedColumns: string[] = ['nro factura', 'nombre', 'cantidad', 'detalles', 'precio', 'iva', 'Sub-total', 'total', 'opcion'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  faturas: Factura[] = [];
+  // factura: Factura = new Factura;
+  displayedColumns: string[] = ['nro factura', 'nombre', 'precio', 'iva', 'Sub-total', 'total', 'opcion'];
+  dataSource = new MatTableDataSource<Factura>();
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public serviceFactura: FacturaService) { }
 
   ngOnInit(): void {
+
+    this.serviceFactura.getFacturas().subscribe(response =>{
+      console.log(response);
+      
+      if (response.length == 0){
+        console.log("JAJAJAJA")
+        
+      }else{
+        response.forEach((f:Factura) =>{
+          this.faturas.push(f)
+          this.dataSource.data=[];
+          this.dataSource.data = this.faturas.slice(0)
+        })
+      }
+    })
   }
+   
 
   openDialogEdit() {
     const dialogRef = this.dialog.open(EditComponent);
@@ -32,6 +54,8 @@ export class TableComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+
 }
   export interface PeriodicElement {
     name: string;
