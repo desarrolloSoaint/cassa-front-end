@@ -12,6 +12,39 @@ import { HomeComponent } from './components/home/home.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { TableComponent } from './components/table/table.component';
 
+
+
+
+
+
+
+
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditComponent } from './components/edit/edit.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ViewComponent } from './components/view/view.component';
+import {MatCardModule} from '@angular/material/card';
+
+
+
+
+
+
+
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +54,24 @@ import { TableComponent } from './components/table/table.component';
     LoginComponent,
     HomeComponent,
     UploadComponent,
-    TableComponent
+    TableComponent,
+    EditComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatCardModule,
     APP_ROUTING
   ],
   providers: [],
