@@ -24,7 +24,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {MatTableModule} from '@angular/material/table';
+import { EditComponent } from './components/edit/edit.component';
+import { ViewComponent } from './components/view/view.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,9 @@ import {MatDividerModule} from '@angular/material/divider';
     LoginComponent,
     HomeComponent,
     UploadComponent,
-    TableComponent
+    TableComponent,
+    EditComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,10 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     MatButtonToggleModule,
     MatTabsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule,
+    MatDialogModule,
+    MatMenuModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
