@@ -13,9 +13,9 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { UploadComponent } from './components/upload/upload.component';
-import { TableComponent } from './components/table/table.component';
-import { EditComponent } from './components/edit/edit.component';
-import { ViewComponent } from './components/view/view.component';
+import { TableComponent } from './components/invoices/table/table.component';
+import { EditComponent } from './components/invoices/edit/edit.component';
+import { ViewComponent } from './components/invoices/view/view.component';
 //////////////////////Angular Material////////////////////////////////
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
@@ -32,6 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatDialogModule,
     MatMenuModule,
     MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
     
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,4 +1,5 @@
 export interface Factura {
+    id:number;
     nro_factura:string,
     nombre:string,
     cantidad:string,

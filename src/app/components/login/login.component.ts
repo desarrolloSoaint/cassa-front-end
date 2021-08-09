@@ -28,10 +28,7 @@ export class LoginComponent implements OnInit {
   
   constructor(private router: Router, public loginServices: LoginService) { }
   
-  ngOnInit(): void {
-  
-  }
-
+  ngOnInit(): void { }
     loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -39,12 +36,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      
       this.loginServices.login(this.loginForm.value).subscribe(result=>{
         console.log(result);
         this.router.navigate(['home']);
         this.alertSuccess();
-        // this.token();
       }, (error)=>{
         this.alertError();
         this.loginForm.reset()

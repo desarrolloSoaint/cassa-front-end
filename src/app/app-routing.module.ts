@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/shared/header/header.component';
-import { TableComponent } from './components/table/table.component';
+import { TableComponent } from './components/invoices/table/table.component';
 
 const APP_ROUTES: Routes = [
     {

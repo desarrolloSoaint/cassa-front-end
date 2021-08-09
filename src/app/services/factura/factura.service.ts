@@ -17,11 +17,11 @@ export class FacturaService {
   }
 
   update(factura:Factura):Observable<Factura>{
-    return this.httpClient.post<Factura>(`${baseUrl}/update/`, factura, {headers:this.httpHeaders})
+    return this.httpClient.post<Factura>(`${baseUrl}/invoices/update/`, factura, {headers:this.httpHeaders})
   }
 
   delete(id:number): Observable<any>{
-    return this.httpClient.delete(`${baseUrl}/delete/${id}`,{headers:this.httpHeaders})
+    return this.httpClient.get(`${baseUrl}/invoices/delete/${id}`)
   }
 
 

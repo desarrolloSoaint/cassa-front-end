@@ -1,4 +1,4 @@
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Login } from 'src/app/core/interfaces/login';
@@ -14,7 +14,4 @@ export class LoginService {
   login(data: Login):Observable<Login>{
     return this.httpClient.post<Login>(`${baseUrl}/login`,data);
   }
-
-  
- 
 }

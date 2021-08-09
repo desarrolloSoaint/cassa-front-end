@@ -1,5 +1,6 @@
 <body>
 
+
     <mat-card class="mat-elevation-z">
         <mat-toolbar>
             <span></span>
@@ -7,6 +8,7 @@
         </mat-toolbar>
 
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z3">
+
 
             <!--Nombre de tablas-->
 
@@ -55,7 +57,7 @@
                 <span>Editar</span>
               </button>
 
-                        <button mat-menu-item>
+                        <button mat-menu-item (click)="SwalDelete(factura.id)">
                 <mat-icon>delete_forever</mat-icon>
                 <span>Eliminar</span>
               </button>
@@ -67,10 +69,11 @@
                 </td>
             </ng-container>
 
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-
+        <mat-spinner *ngIf="facturas.length == 0"></mat-spinner>
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </mat-card>
 
