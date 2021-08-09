@@ -16,8 +16,8 @@ export class FacturaService {
     return this.httpClient.get<Factura[]>(`${baseUrl}/invoices`)
   }
 
-  update(factura:Factura):Observable<Factura>{
-    return this.httpClient.post<Factura>(`${baseUrl}/invoices/update/`, factura, {headers:this.httpHeaders})
+  update(factura:Factura, id:number):Observable<Factura>{
+    return this.httpClient.post<Factura>(`${baseUrl}/invoices/${id}`, factura, {headers:this.httpHeaders})
   }
 
   delete(id:number): Observable<any>{

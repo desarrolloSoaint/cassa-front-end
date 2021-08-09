@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Factura } from '../../../core/interfaces/factura';
 
 @Component({
   selector: 'app-view',
@@ -8,13 +9,16 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class ViewComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<ViewComponent>) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Factura, private dialogRef: MatDialogRef<ViewComponent>) { }
 
   ngOnInit(): void {
+    console.log(this.data,"VER")
   }
 
   onNoClick(): void {
     this.dialogRef.close();
    }
+
+
 
 }

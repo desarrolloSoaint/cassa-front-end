@@ -52,7 +52,7 @@
                 <mat-icon>cloud_download</mat-icon>
                 <span>Descargar</span>
               </button>
-                        <button mat-menu-item (click)="openDialogEdit()">
+                        <button mat-menu-item (click)="openDialogEdit(factura.id)">
                 <mat-icon>create</mat-icon>
                 <span>Editar</span>
               </button>
@@ -61,7 +61,7 @@
                 <mat-icon>delete_forever</mat-icon>
                 <span>Eliminar</span>
               </button>
-                        <button mat-menu-item (click)="openDialogView()">
+                        <button mat-menu-item (click)="openDialogView(factura.id)">
                 <mat-icon>visibility</mat-icon>
                 <span>Ver</span>
               </button>
@@ -73,7 +73,10 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-        <mat-spinner *ngIf="facturas.length == 0"></mat-spinner>
+        <mat-card *ngIf="facturas.length == 0">
+            <mat-spinner></mat-spinner>
+        </mat-card>
+
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </mat-card>
 

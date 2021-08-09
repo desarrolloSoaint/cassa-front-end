@@ -39,18 +39,32 @@ export class TableComponent implements OnInit {
     })
   }
 
-  openDialogEdit() {
-    const dialogRef = this.dialog.open(EditComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+
+  
+  openDialogEdit(id: number) {
+    const dialogRef = this.dialog.open(EditComponent,{
+      data: {
+        id: id
+      }
     });
+    console.log(id);
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
-  openDialogView() {
-    const dialogRef = this.dialog.open(ViewComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+  openDialogView(id: number) {
+    const dialogRef = this.dialog.open(ViewComponent,{
+      data: {
+        id: id
+      }
     });
+    console.log(id);
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
   delete(id: number) {
