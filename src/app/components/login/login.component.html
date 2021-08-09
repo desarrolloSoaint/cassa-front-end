@@ -6,8 +6,7 @@
                 <div class="row">
                     <mat-form-field appearance="outline" id="login-display">
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput formControlName="email" name="email" placeholder="Ingrese Email"
-                            autofocus>
+                        <input type="email" matInput formControlName="email" name="email" placeholder="Ingrese Email" autofocus>
                         <mat-error ngxErrors="loginForm.email">
                             <p ngxError="email"> {{title.email}}</p>
                         </mat-error>
@@ -16,8 +15,7 @@
                 <div class="row">
                     <mat-form-field appearance="outline" id="login-display">
                         <mat-label>Password</mat-label>
-                        <input type="Password" matInput formControlName="password" name="password"
-                            placeholder="Ingrese Contraseña">
+                        <input type="Password" matInput formControlName="password" name="password" placeholder="Ingrese Contraseña">
                         <mat-error ngxErrors="loginForm.password">
                             <p ngxError="minLength"> {{title.password}}</p>
                         </mat-error>

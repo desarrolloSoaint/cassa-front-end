@@ -24,5 +24,8 @@ export class FacturaService {
     return this.httpClient.get(`${baseUrl}/invoices/delete/${id}`)
   }
 
+  viewFacturas(id:number): Observable<any>{
+    return this.httpClient.get(`${baseUrl}/invoices/${id}`)
+  }
 
 }
