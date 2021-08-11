@@ -13,21 +13,20 @@ export class ViewComponent implements OnInit {
   factura: any = [];
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) 
-    public data: Factura, 
-    private dialogRef: MatDialogRef<ViewComponent>, 
+    @Inject(MAT_DIALOG_DATA)
+    public data: Factura,
+    private dialogRef: MatDialogRef<ViewComponent>,
     public serviceFactura: FacturaService) { }
 
   ngOnInit(): void {
-    console.log(this.data, "VER");
+    // console.log(this.data, "VER");
     this.viewInvoices();
-    
   }
 
-  viewInvoices(){
+  viewInvoices() {
     this.serviceFactura.viewFacturas(this.data.id).subscribe(res => {
       this.factura = res;
-      console.log(this.factura);
+      // console.log(this.factura);
     })
   }
 

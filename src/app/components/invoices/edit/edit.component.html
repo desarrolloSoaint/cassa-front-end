@@ -9,36 +9,36 @@
     <div class="formulario">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>No. Factura</mat-label>
-            <input matInput formControlName="nro_factura" name="nro_factura">
+            <input matInput formControlName="nro_factura" [value]=factura.nro_factura>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Fecha</mat-label>
-            <input matInput formControlName="nombre">
+            <input matInput formControlName="fecha" [value]=factura.fecha>
         </mat-form-field>
     </div>
 
     <div>
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>NI</mat-label>
-            <input matInput formControlName="detalles">
+            <mat-label>NIT</mat-label>
+            <input matInput formControlName="nit" [value]=factura.nit>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nombre</mat-label>
-            <input matInput formControlName="nombre" name="nombre">
+            <input matInput formControlName="nombre" [value]=factura.nombre>
         </mat-form-field>
     </div>
 
     <div>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Precio</mat-label>
-            <input matInput formControlName="precio">
+            <input matInput formControlName="precio" [value]=factura.precio>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Iva</mat-label>
-            <input matInput formControlName="iva">
+            <input matInput formControlName="iva" [value]=factura.iva>
         </mat-form-field>
 
     </div>
@@ -46,12 +46,17 @@
     <div>
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Sub-total</mat-label>
-            <input matInput formControlName="sub_total">
+            <input matInput formControlName="sub_total" [value]=factura.sub_total>
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Total</mat-label>
-            <input matInput formControlName="total">
+            <input matInput formControlName="total" [value]=factura.total>
         </mat-form-field>
     </div>
+    <div>
+
+        <button mat-raised-button style="margin-left: 10em;" (click)="editInvoices()" *ngIf="!invoiceForm.valid"> {{titles.button}} </button>
+    </div>
+
 </form>

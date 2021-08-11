@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 import Swal from 'sweetalert2';
-
-
-export interface User {
-  name: string;
-  password: string;
-}
 
 @Component({
   selector: 'app-login',
@@ -26,9 +20,12 @@ export class LoginComponent implements OnInit {
     password: "Ingrese una contaseña válida"
   }
   
-  constructor(private router: Router, public loginServices: LoginService) { }
+  constructor(
+    private router: Router, 
+    public loginServices: LoginService) { }
   
   ngOnInit(): void { }
+
     loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
@@ -66,6 +63,7 @@ export class LoginComponent implements OnInit {
       title: 'Bienvenido'
     })
   }
+  
   alertError() {
     const Toast = Swal.mixin({
       toast: true,
@@ -77,7 +75,6 @@ export class LoginComponent implements OnInit {
         toast.addEventListener('mouseleave', Swal.resumeTimer)
       }
     })
-
     Toast.fire({
       icon: 'error',
       title: 'Usuario o Contraseña Incorrecta'
